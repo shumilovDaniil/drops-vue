@@ -1,11 +1,12 @@
 <script setup>
 import Header from "./../components/Header.vue";
+import AddProductForm from "../components/AddProductForm.vue";
 </script>
 
 <template>
   <div class="container">
     <Header></Header>
-    About
+    <AddProductForm />
   </div>
 </template>
 
