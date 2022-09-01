@@ -1,5 +1,5 @@
 <template>
-  <button href="#" class="btn"><slot></slot></button>
+  <button href="#" class="btn" type="submit"><slot></slot></button>
 </template>
 
 <style scoped>
