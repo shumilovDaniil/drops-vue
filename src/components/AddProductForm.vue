@@ -1,36 +1,39 @@
-<script>
+<script setup>
 import { ref } from "vue";
 import DropsButton from "./ui/drops-button.vue";
+import { useStore } from "@/stores";
+import { onMounted } from "vue";
 
-export default {
-  data() {
-    return {
-      title: "",
-      tag: "",
-      price: 0,
-      image: "",
-      role: "",
-    };
-  },
-  components: { DropsButton },
-  methods: {
-    createProduct: () => {
-      const newProduct = {
-        title: title.value,
-        tag: tag.value,
-        price: price.value,
-        image: image.value,
-        role: role.value,
-      };
+const title = ref("");
+const category = ref("");
+const price = ref(0);
+const image = ref("");
+const role = ref("");
 
-      console.log(newProduct);
-    },
-  },
-};
+const store = useStore();
+
+function handleImage(e) {
+  image.value = e.target.value;
+}
+
+function createProduct() {
+  const newProduct = {
+    title: title.value,
+    category: category.value,
+    price: price.value,
+    image: image.value,
+    role: role.value,
+  };
+
+  store.$patch((state) => {
+    state.products.push(newProduct);
+  });
+}
 </script>
 
 <template>
   <h2 class="title">Add form</h2>
+
   <form @submit.prevent="createProduct" class="form" action="">
     <div class="form__block">
       <label for="title">Title</label>
@@ -38,8 +41,8 @@ export default {
     </div>
 
     <div class="form__block">
-      <label for="tag">Tag</label>
-      <input v-model="tag" id="tag" type="text" />
+      <label for="category">Tag</label>
+      <input v-model="category" id="category" type="text" />
     </div>
 
     <div class="form__block">
@@ -49,7 +52,7 @@ export default {
 
     <div class="form__block">
       <label for="image">Upload image</label>
-      <input id="image" type="file" />
+      <input @change="handleImage" :value="image" id="image" type="file" />
     </div>
 
     <div class="form__block">

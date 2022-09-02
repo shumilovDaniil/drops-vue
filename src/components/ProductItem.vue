@@ -26,6 +26,7 @@ const props = defineProps({
 
 .item img {
   width: 100%;
+  margin-bottom: 7px;
 }
 .item h4 {
   font-size: 22px;
