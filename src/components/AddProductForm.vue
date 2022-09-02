@@ -1,8 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import DropsButton from "./ui/drops-button.vue";
-import { useStore } from "@/stores";
-import { onMounted } from "vue";
+import { useProductStore } from "../stores/product/productStore";
 
 const title = ref("");
 const category = ref("");
@@ -10,7 +9,7 @@ const price = ref(0);
 const image = ref("");
 const role = ref("");
 
-const store = useStore();
+const store = useProductStore();
 
 function handleImage(e) {
   image.value = e.target.value;

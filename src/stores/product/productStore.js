@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 
-export const useStore = defineStore("products", {
+export const useProductStore = defineStore("products", {
   // arrow function recommended for full type inference
   state: () => {
     return {
@@ -26,6 +26,13 @@ export const useStore = defineStore("products", {
           title: "Propolis Raw Honey Throat",
           category: "Slimming",
           price: 43,
+        },
+        {
+          id: 4,
+          img: "https://www.beeandyou.com/image/cache/catalog/product_galery/new-product-images/v2800x850_THROATSPRAY-800x850.png",
+          title: "Throat",
+          category: "Slimming",
+          price: 13,
         },
       ],
     };

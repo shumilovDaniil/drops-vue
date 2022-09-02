@@ -1,10 +1,10 @@
 <script setup>
 import { ref } from "vue";
 import ProductItem from "./ProductItem.vue";
-import { useStore } from "../stores";
+import { useProductStore } from "../stores/product/productStore";
 import { onMounted } from "vue";
 
-const store = useStore();
+const store = useProductStore();
 </script>
 
 <template>
@@ -26,9 +26,9 @@ const store = useStore();
 }
 .items {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 20px;
+  justify-content: center;
+  gap: 40px;
 }
 
 .item {
