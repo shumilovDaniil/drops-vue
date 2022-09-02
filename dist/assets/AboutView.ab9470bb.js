@@ -1,0 +1,1 @@
+import{o as e,c as t,a as o,b as _,H as a}from"./index.ade14de0.js";const s={class:"container"},c=_(" About "),d={__name:"AboutView",setup(n){return(r,i)=>(e(),t("div",s,[o(a),c]))}};export{d as default};
