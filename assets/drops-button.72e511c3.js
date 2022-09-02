@@ -1,0 +1,1 @@
+import{_ as t,o,c as s,i as n}from"./index.ade14de0.js";const _={},c={href:"#",class:"btn",type:"submit"};function r(e,a){return o(),s("button",c,[n(e.$slots,"default",{},void 0,!0)])}const u=t(_,[["render",r],["__scopeId","data-v-21a602c0"]]);export{u as D};
